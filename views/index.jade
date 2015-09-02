@@ -1,6 +1,15 @@
 extends layout
 
 block content
+  form(method="POST")
+    label Add a new student to the list
+    p
+      input(type="text" name="firstName")
+    p
+      input(type="text" name="lastName")
+    input(type="submit" id="newStudent" value="Add Student")
+
+  h2 Student List
   ul.contents
     each val in students
       li=  val.firstName + " " + val.lastName
